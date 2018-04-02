@@ -9,7 +9,7 @@ FROM openjdk:8
 
 # Env variables
 ENV SCALA_VERSION 2.12.5
-ENV SBT_VERSION 1.1.1
+ENV SBT_VERSION 1.1.2
 
 # Scala expects this file
 RUN touch /usr/lib/jvm/java-8-openjdk-amd64/release
