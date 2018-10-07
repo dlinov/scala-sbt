@@ -30,6 +30,10 @@ docker build -t dlinov/scala-sbt github.com/dlinov/scala-sbt
 ```
 docker run -it --rm dlinov/scala-sbt
 ```
+When using from bitbucket pipelines, it might be used like this:
+```
+sbt -java-home /root/graal clean test
+```
 
 
 ## Contribution policy ##
