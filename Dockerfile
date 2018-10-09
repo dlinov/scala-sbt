@@ -9,7 +9,7 @@ FROM buildpack-deps:stretch-scm
 
 # Env variables
 ENV SCALA_VERSION 2.12.7
-ENV SBT_VERSION 1.2.3
+ENV SBT_VERSION 1.2.4
 ENV JAVA_HOME /root/graal
 ENV GRAAL_VERSION 1.0.0-rc7
 
