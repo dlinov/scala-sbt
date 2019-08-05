@@ -11,12 +11,12 @@ FROM buildpack-deps:stretch-scm
 ENV SCALA_VERSION 2.12.8
 ENV SBT_VERSION 1.2.8
 ENV JAVA_HOME /root/graal
-ENV GRAAL_VERSION 1.0.0-rc13
+ENV GRAAL_VERSION 19.1.1
 
 # Install GraalVM
 RUN \
   mkdir $JAVA_HOME && \
-  curl -fsL https://github.com/oracle/graal/releases/download/vm-$GRAAL_VERSION/graalvm-ce-$GRAAL_VERSION-linux-amd64.tar.gz | tar xfz - -C $JAVA_HOME --strip-components=1
+  curl -fsL https://github.com/oracle/graal/releases/download/vm-$GRAAL_VERSION/graalvm-ce-linux-amd64-$GRAAL_VERSION.tar.gz | tar xfz - -C $JAVA_HOME --strip-components=1
 
 # Install Scala
 ## Piping curl directly in tar
