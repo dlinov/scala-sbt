@@ -8,7 +8,7 @@
 FROM openjdk:8
 
 # Env variables
-ENV SCALA_VERSION 2.12.8
+ENV SCALA_VERSION 2.12.9
 ENV SBT_VERSION 1.2.8
 
 # Scala expects this file
