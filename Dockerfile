@@ -36,9 +36,16 @@ RUN \
   apt-get install sbt && \
   rm -rf /var/lib/apt/lists/*
 
-# Download sbt jars
+# Prepare sbt
 # TODO: didn't find a good way to apply updated PATH from .bashrc here, so explicitly specified java home
-RUN sbt -java-home $JAVA_HOME sbtVersion
+RUN \
+  sbt -java-home $JAVA_HOME sbtVersion && \
+  mkdir -p project && \
+  echo "scalaVersion := \"${SCALA_VERSION}\"" > build.sbt && \
+  echo "sbt.version=${SBT_VERSION}" > project/build.properties && \
+  echo "case object Temp" > Temp.scala && \
+  sbt -java-home $JAVA_HOME compile && \
+  rm -r project && rm build.sbt && rm Temp.scala && rm -r target
 
 # Create non-root user
 RUN useradd -ms /bin/bash testuser
