@@ -25,7 +25,7 @@ RUN \
   rm sbt-$SBT_VERSION.deb && \
   apt-get update && \
   apt-get install sbt && \
-  rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/* \
   sbt sbtVersion && \
   mkdir -p project && \
   echo "scalaVersion := \"${SCALA_VERSION}\"" > build.sbt && \
