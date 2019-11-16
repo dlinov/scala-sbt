@@ -9,9 +9,9 @@ FROM buildpack-deps:stretch-scm
 
 # Env variables
 ENV SCALA_VERSION 2.12.10
-ENV SBT_VERSION 1.3.2
+ENV SBT_VERSION 1.3.3
 ENV JAVA_HOME /root/graal
-ENV GRAAL_VERSION 19.2.0.1
+ENV GRAAL_VERSION 19.2.1
 
 # Install GraalVM
 RUN \
